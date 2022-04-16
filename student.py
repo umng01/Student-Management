@@ -9,8 +9,9 @@ from tkinter import messagebox
 class Student:
     def __init__(self, root):
         self.root = root 
-        self.root.geometry("1530x790+0+0")
+        self.root.geometry("1530x630+0+0")
         self.root.title("Managing")
+        self.root.resizable(False,False)
 
 
         # Variables
@@ -35,40 +36,40 @@ class Student:
 
 
         #1st
-        img = Image.open(r"college_images/7th.jpg")
-        img = img.resize((540, 160), Image.ANTIALIAS)
-        self.photoimg = ImageTk.PhotoImage(img)
+        # img = Image.open(r"college_images/7th.jpg")
+        # img = img.resize((540, 160), Image.ANTIALIAS)
+        # self.photoimg = ImageTk.PhotoImage(img)
 
-        self.btn_1 = Button(self.root, image=self.photoimg, cursor="hand2")
-        self.btn_1.place(x=0,y=0,width=540,height=160)
+        # self.btn_1 = Button(self.root, image=self.photoimg, cursor="hand2")
+        # self.btn_1.place(x=0,y=0,width=540,height=160)
 
 
         #2nd
-        img_2 = Image.open(r"college_images/5th.jpg")
-        img_2 = img_2.resize((540, 160), Image.ANTIALIAS)
-        self.photoimg_2 = ImageTk.PhotoImage(img_2)
+        # img_2 = Image.open(r"college_images/5th.jpg")
+        # img_2 = img_2.resize((540, 160), Image.ANTIALIAS)
+        # self.photoimg_2 = ImageTk.PhotoImage(img_2)
 
-        self.btn_2 = Button(self.root, image=self.photoimg_2, cursor="hand2")
-        self.btn_2.place(x=540,y=0,width=540,height=160)
+        # self.btn_2 = Button(self.root, image=self.photoimg_2, cursor="hand2")
+        # self.btn_2.place(x=540,y=0,width=540,height=160)
 
 
-        #3rd
-        img_3 = Image.open(r"college_images/6th.jpg")
-        img_3 = img_3.resize((540, 160), Image.ANTIALIAS)
-        self.photoimg_3 = ImageTk.PhotoImage(img_3)
+        # #3rd
+        # img_3 = Image.open(r"college_images/6th.jpg")
+        # img_3 = img_3.resize((540, 160), Image.ANTIALIAS)
+        # self.photoimg_3 = ImageTk.PhotoImage(img_3)
 
-        self.btn_3 = Button(self.root, image=self.photoimg_3, cursor="hand2")
-        self.btn_3.place(x=1000,y=0,width=540,height=160)
+        # self.btn_3 = Button(self.root, image=self.photoimg_3, cursor="hand2")
+        # self.btn_3.place(x=1000,y=0,width=540,height=160)
 
 
         # bg image
 
-        img_4 = Image.open(r"college_images/university.jpg")
+        img_4 = Image.open(r"college_images/black.jpg")
         img_4 = img_4.resize((1530, 710), Image.ANTIALIAS)
         self.photoimg_4 = ImageTk.PhotoImage(img_4)
 
         bg_lbl = Label(self.root, image = self.photoimg_4, bd = 2, relief=RIDGE)
-        bg_lbl.place(x=0, y = 160, width=1530, height=710)
+        bg_lbl.place(x=0, y = 0, width=1530, height=710)
 
 
         lbl_title = Label(bg_lbl, text = "Perform CRUD", font = ("times new roman",37,"bold"),fg="black", bg="white")
@@ -89,7 +90,7 @@ class Student:
 
 
         #img
-        img_5 = Image.open(r"college_images/3rd.jpg")
+        img_5 = Image.open(r"college_images/1.jpg")
         img_5 = img_5.resize((650, 110), Image.ANTIALIAS)
         self.photoimg_5 = ImageTk.PhotoImage(img_5)
 
@@ -154,7 +155,7 @@ class Student:
         lbl_id = Label(std_lbl_class_frame, font=("arial", 12, "bold"), text="Student ID", bg="white")
         lbl_id.grid(row=0, column=0, sticky=W, padx=2, pady=7)
         
-        id_entry = ttk.Entry(std_lbl_class_frame, textvariable=self.var_std_id, font = ("arial", 12, "bold"), width = 22)
+        id_entry = ttk.Entry(std_lbl_class_frame, textvariable=self.var_std_id, font = ("arial", 12, "bold"), width = 20)
         id_entry.grid(row=0, column=1, sticky=W, padx=2, pady=7)
 
         # Name 
@@ -248,19 +249,19 @@ class Student:
 
         #right frame
         DataRightFrame = LabelFrame(Manage_frame, bd=4,relief=RIDGE, padx=2, text="Student Information", font = ("times new roman",12,"bold"),fg="red" )
-        DataRightFrame.place(x=680, y = 10, width=800, height=540)
+        DataRightFrame.place(x=680, y = 0, width=800, height=540)
 
 
-        img_6 = Image.open(r"college_images/6th.jpg")
-        img_6 = img_6.resize((780, 200), Image.ANTIALIAS)
-        self.photoimg_6 = ImageTk.PhotoImage(img_6)
+        # img_6 = Image.open(r"college_images/6th.jpg")
+        # img_6 = img_6.resize((780, 200), Image.ANTIALIAS)
+        # self.photoimg_6 = ImageTk.PhotoImage(img_6)
 
-        my_img = Label(DataRightFrame, image = self.photoimg_6, bd = 2, relief=RIDGE)
-        my_img.place(x=0, y =0, width=790, height=200)
+        # my_img = Label(DataRightFrame, image = self.photoimg_6, bd = 2, relief=RIDGE)
+        # my_img.place(x=0, y =0, width=790, height=200)
 
         # Right Frame 
-        Search_Frame = LabelFrame(DataRightFrame, bd=4,relief=RIDGE, padx=2, text="Search Student Information", font = ("times new roman",12,"bold"),fg="red" )
-        Search_Frame.place(x=0, y = 200, width=790, height=60)
+        Search_Frame = LabelFrame(DataRightFrame, bd=4,relief=RIDGE, padx=2, text="", font = ("times new roman",12,"bold"),fg="red" )
+        Search_Frame.place(x=0, y = 10, width=790, height=60)
 
         Search_by = Label(Search_Frame, font=("arial", 11, "bold"), text="Search By:", bg="black", fg="red")
         Search_by.grid(row=0, column=0, sticky=W, padx=5)
@@ -277,17 +278,17 @@ class Student:
         txt_search = ttk.Entry(Search_Frame,textvariable=self.var_search, font = ("arial", 11, "bold"), width = 22)
         txt_search.grid(row=0, column=2, sticky=W, padx=5)
 
-        btn_search = Button(Search_Frame,command=self.search_data, text="Search", font=("arial", 11, "bold"), width=14, bg = "blue", fg = "white")
-        btn_search.grid(row=0, column=3, padx=5)
+        btn_search = Button(Search_Frame,command=self.search_data, text="Search", font=("arial", 11, "bold"), width=12, bg = "blue", fg = "white")
+        btn_search.grid(row=0, column=3, padx=2)
 
-        btn_showAll = Button(Search_Frame,command=self.fetch_data,text="Show All", font=("arial", 11, "bold"), width=14, bg = "blue", fg = "white")
-        btn_showAll.grid(row=0, column=4, padx=5)
+        btn_showAll = Button(Search_Frame,command=self.fetch_data,text="Show All", font=("arial", 11, "bold"), width=12, bg = "blue", fg = "white")
+        btn_showAll.grid(row=0, column=4, padx=2)
 
 
 
         # ******************Student Table and Scroll Bar***************
         table_frame = Frame(DataRightFrame, bd=4, relief=RIDGE)
-        table_frame.place(x=0,y=260,width=790,height=250)
+        table_frame.place(x=0,y=100,width=790,height=400)
 
         scroll_x = ttk.Scrollbar(table_frame, orient=HORIZONTAL)
         scroll_y = ttk.Scrollbar(table_frame, orient=VERTICAL)
